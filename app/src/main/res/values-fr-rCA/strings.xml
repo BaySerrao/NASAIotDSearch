@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello_world">Bonjour le monde</string>
-    <string name="button_text">Je suis un bouton!</string>
+    <string name="app_name">Lab 2</string>
+    <string name="hello_world">J\'aime Android</string>
+    <string name="button_text">Appuyez sur moi</string>
+    <string name="switch1Text">Allumer / éteindre</string>
+    <string name="etext1">J\'aime Android</string>
+    <string name="cb1">Regarde ça!</string>
+    <string name="toast">L\'étiquette a été mise à jour.</string>
+    <string name="csnack">La case à cocher est maintenant activée.</string>
+    <string name="csnack2">La case à cocher est maintenant désactivée.</string>
 </resources>

@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_constraint.xml" value="0.30885416666666665" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_grid.xml" value="0.30885416666666665" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_linear.xml" value="0.25" />
       </map>
     </option>
   </component>
