@@ -4,28 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".NameActivity">
 
     <TextView
-        android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text1"
+        android:text="@string/welcome"
+        android:id="@+id/t2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
-
-    <EditText
-        android:id="@+id/e1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/t1"
-        app:layout_constraintStart_toStartOf="parent"></EditText>
-
     <Button
-        android:id="@+id/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button1"
-        app:layout_constraintTop_toBottomOf="@id/e1"
-        app:layout_constraintStart_toStartOf="parent"></Button>
+        android:text="@string/button2"
+        android:id="@+id/b2"
+        app:layout_constraintTop_toBottomOf="@id/t2"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="3dp"></Button>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button3"
+        android:id="@+id/b3"
+        app:layout_constraintTop_toBottomOf="@id/t2"
+        app:layout_constraintStart_toEndOf="@id/b2"
+        android:layout_marginStart="10dp"></Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
