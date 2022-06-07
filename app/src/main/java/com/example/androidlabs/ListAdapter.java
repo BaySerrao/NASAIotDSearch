@@ -54,8 +54,9 @@ public class ListAdapter extends ArrayAdapter<ToDo>{
         }
         ToDo toDo = getItem(position);
         TextView tv1 = (TextView)convertView.findViewById(R.id.tv1);
-        tv1.setText(ToDo.getAction());
-        if (toDo.getUrgent()==true){
+
+        tv1.setText(toDo.action.toString());
+        if (toDo.urgent==true){
             convertView.setBackgroundColor(Color.RED);
             tv1.setTextColor(Color.WHITE);
         }
