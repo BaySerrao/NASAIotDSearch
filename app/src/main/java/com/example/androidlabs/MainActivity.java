@@ -1,67 +1,68 @@
 package com.example.androidlabs;
 
-import androidx.activity.result.ActivityResultCallback;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Switch;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity {
+    ArrayList<ToDo> toDoArrayList;
+    ArrayAdapter<ToDo> arrayAdapter;
+    ListAdapter listAdapter;
+    ListView lv1;
+    EditText et1;
+    private Object ToDo;
+    ToDo t1;
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btn = (Button)findViewById(R.id.b1);
-        EditText e1 = (EditText)findViewById(R.id.e1);
-        TextView t1 = (TextView)findViewById(R.id.t1);
-        SharedPreferences pref = getSharedPreferences("name", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-        String name = pref.getString("savedName", "");
-        e1.setText(name);
-        final String input1;
+        et1 = (EditText)findViewById(R.id.et1);
+        toDoArrayList =  new ArrayList<ToDo>();
+        listAdapter = new ListAdapter(this,android.R.layout.activity_list_item, toDoArrayList);
+        lv1 = (ListView)findViewById(R.id.lv1);
+        lv1.setAdapter(listAdapter);
+        Switch sw1 = (Switch) findViewById(R.id.sw1);
+        Button btn = (Button) findViewById(R.id.b1);
+        
 
+        btn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+            EditText et1 = (EditText)findViewById(R.id.et1);
+            Switch sw1 = (Switch) findViewById(R.id.sw1);
+            ToDo newToDo = new ToDo(et1.getText(),sw1.isChecked());
+            listAdapter.add(newToDo);
+            listAdapter.notifyDataSetChanged();
+            et1.setText("");
 
-        btn.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v) {
-                Editable input1 = e1.getText();
-                Intent nextPage = new Intent(MainActivity.this, NameActivity.class);
-                nextPage.putExtra("input", input1);
-
-                editor.putString("savedName", input1.toString());
-                editor.commit();
-                startActivityForResult(nextPage, 2);
-            }
+        }
         });
+        }
+    public void addItemToList(View view){
+        EditText et1 = (EditText)findViewById(R.id.et1);
+        Switch sw1 = (Switch) findViewById(R.id.sw1);
+        ToDo newToDo = new ToDo(et1.getText(),sw1.isChecked());
+        listAdapter.add(newToDo);
+        listAdapter.notifyDataSetChanged();
+        et1.setText("");
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        SharedPreferences pref = getSharedPreferences("name", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-        EditText e1 = (EditText)findViewById(R.id.e1);
-        editor.putString("savedName", e1.getText().toString());
-        editor.commit();
 
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 2 && resultCode == 1){
-            finish();
-    }
-}
+
+
+
 }
