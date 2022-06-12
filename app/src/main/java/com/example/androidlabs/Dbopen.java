@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Switch;
+import android.widget.Toast;
 
 public class Dbopen extends SQLiteOpenHelper {
     protected final static String database = "Lab 5 Database";
@@ -25,7 +26,7 @@ public class Dbopen extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXISTS " + tableName);
+       db.execSQL("DROP TABLE IF EXISTS " + tableName);
         onCreate(db);
     }
     @Override
@@ -37,4 +38,9 @@ public class Dbopen extends SQLiteOpenHelper {
     public void onOpen(SQLiteDatabase db){
 
     }
+    public void delete(int i){
+        SQLiteDatabase db = getWritableDatabase();
+        db.delete("To_Do", col_id + "=?", new String[]{Integer.toString(i)});
+    }
+
 }

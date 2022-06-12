@@ -31,12 +31,18 @@ public class MainActivity extends AppCompatActivity {
     EditText et1;
     private Object ToDo;
     ToDo t1;
+    Dbopen opener = new Dbopen(this);
+    SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         et1 = (EditText)findViewById(R.id.et1);
         toDoArrayList =  new ArrayList<ToDo>();
+        Dbopen opener = new Dbopen(this);
+        SQLiteDatabase db;
+        db = opener.getWritableDatabase();
         listAdapter = new ListAdapter(this,android.R.layout.activity_list_item, toDoArrayList);
         lv1 = (ListView)findViewById(R.id.lv1);
         lv1.setAdapter(listAdapter);
@@ -66,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                 alertDialogBuilder.setMessage(getString(R.string.messBody) + (index+1));
                 alertDialogBuilder.setPositiveButton(getString(R.string.messPos), (click, arg) -> {
                 toDoArrayList.remove(index);
+                removeFromDB(index+1);
                 listAdapter.notifyDataSetChanged();
                 });
                 alertDialogBuilder.setNegativeButton(getString(R.string.messNeg), (click, arg) -> {
@@ -93,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         //connect
         Dbopen opener = new Dbopen(this);
         SQLiteDatabase db;
-        db = opener.getReadableDatabase();
+        db = opener.getWritableDatabase();
         //gather columns
         String[] columns = {Dbopen.col_id, Dbopen.col_action, Dbopen.col_urgent};
         //query results
@@ -107,14 +114,14 @@ public class MainActivity extends AppCompatActivity {
             String action = results.getString(col2Index);
             String urgent = results.getString(col3Index);
             long id = results.getLong(col1Index);
-            if (urgent=="false"){
+            if (urgent.equals("false")){
                 listAdapter.add(new ToDo(action, false));
-                listAdapter.notifyDataSetChanged();
-            } else if(urgent=="true") {
-                listAdapter.add(new ToDo(action, true));
-                listAdapter.notifyDataSetChanged();
-            }
 
+            } else {
+                listAdapter.add(new ToDo(action, true));
+
+            }
+            listAdapter.notifyDataSetChanged();
         }
     }
     public void addToDB(ToDo newToDo){
@@ -128,17 +135,24 @@ public class MainActivity extends AppCompatActivity {
         Cursor results = db.query(Dbopen.tableName, columns, null, null, null, null, null);
         ContentValues cv = new ContentValues();
         cv.put(Dbopen.col_action, newToDo.action);
-        if(newToDo.urgent==false){
+        if(newToDo.urgent.equals("false")){
             cv.put(Dbopen.col_urgent, "false");
-        }   else if (newToDo.urgent){
+        }   else {
             cv.put(Dbopen.col_urgent, "true");
         }
+        listAdapter.notifyDataSetChanged();
         long newId = db.insert(Dbopen.tableName, null, cv);
 
     }
 
-
-
+    public void removeFromDB(int i){
+        //connect
+        Dbopen opener = new Dbopen(this);
+        SQLiteDatabase db;
+        db = opener.getWritableDatabase();
+        db.delete(Dbopen.tableName, Dbopen.col_id + "= ?", new String[] {Integer.toString(i)});
+        db.close();
+    }
 
 
 }
