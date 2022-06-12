@@ -3,6 +3,9 @@ package com.example.androidlabs;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
@@ -39,13 +42,14 @@ public class MainActivity extends AppCompatActivity {
         lv1.setAdapter(listAdapter);
         Switch sw1 = (Switch) findViewById(R.id.sw1);
         Button btn = (Button) findViewById(R.id.b1);
-
+        loadFromDB();
 
         btn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
             EditText et1 = (EditText)findViewById(R.id.et1);
             Switch sw1 = (Switch) findViewById(R.id.sw1);
             ToDo newToDo = new ToDo(et1.getText().toString(),sw1.isChecked());
+            addToDB(newToDo);
             listAdapter.add(newToDo);
             listAdapter.notifyDataSetChanged();
             et1.setText("");
@@ -77,12 +81,61 @@ public class MainActivity extends AppCompatActivity {
         EditText et1 = (EditText)findViewById(R.id.et1);
         Switch sw1 = (Switch) findViewById(R.id.sw1);
         ToDo newToDo = new ToDo(et1.getText().toString(),sw1.isChecked());
+        addToDB(newToDo);
         listAdapter.add(newToDo);
         listAdapter.notifyDataSetChanged();
         et1.setText("");
+
+
     }
 
+    public void loadFromDB(){
+        //connect
+        Dbopen opener = new Dbopen(this);
+        SQLiteDatabase db;
+        db = opener.getReadableDatabase();
+        //gather columns
+        String[] columns = {Dbopen.col_id, Dbopen.col_action, Dbopen.col_urgent};
+        //query results
+        Cursor results = db.query(Dbopen.tableName, columns, null, null, null, null, null);
+        //column indices
+        int col1Index = results.getColumnIndex(opener.col_id);
+        int col2Index = results.getColumnIndex(opener.col_action);
+        int col3Index = results.getColumnIndex(opener.col_urgent);
 
+        while(results.moveToNext()){
+            String action = results.getString(col2Index);
+            String urgent = results.getString(col3Index);
+            long id = results.getLong(col1Index);
+            if (urgent=="false"){
+                listAdapter.add(new ToDo(action, false));
+                listAdapter.notifyDataSetChanged();
+            } else if(urgent=="true") {
+                listAdapter.add(new ToDo(action, true));
+                listAdapter.notifyDataSetChanged();
+            }
+
+        }
+    }
+    public void addToDB(ToDo newToDo){
+        Dbopen opener = new Dbopen(this);
+        SQLiteDatabase db;
+        db = opener.getWritableDatabase();
+        Switch sw1 = (Switch) findViewById(R.id.sw1);
+        //gather columns
+        String[] columns = {Dbopen.col_id, Dbopen.col_action, Dbopen.col_urgent};
+        //query results
+        Cursor results = db.query(Dbopen.tableName, columns, null, null, null, null, null);
+        ContentValues cv = new ContentValues();
+        cv.put(Dbopen.col_action, newToDo.action);
+        if(newToDo.urgent==false){
+            cv.put(Dbopen.col_urgent, "false");
+        }   else if (newToDo.urgent){
+            cv.put(Dbopen.col_urgent, "true");
+        }
+        long newId = db.insert(Dbopen.tableName, null, cv);
+
+    }
 
 
 
