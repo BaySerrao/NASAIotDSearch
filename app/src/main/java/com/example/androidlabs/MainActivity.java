@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Layout;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -123,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             }
             listAdapter.notifyDataSetChanged();
         }
+        printCursor(results);
     }
     public void addToDB(ToDo newToDo){
         Dbopen opener = new Dbopen(this);
@@ -150,9 +152,49 @@ public class MainActivity extends AppCompatActivity {
         Dbopen opener = new Dbopen(this);
         SQLiteDatabase db;
         db = opener.getWritableDatabase();
-        db.delete(Dbopen.tableName, Dbopen.col_id + "= ?", new String[] {Integer.toString(i)});
-        db.close();
-    }
 
+        Log.i("is this working?", "It seems to be getting called");
+        db.delete(Dbopen.tableName, Dbopen.col_id + "= ?", new String[] {Integer.toString(i)});
+
+    }
+    public void printCursor(Cursor results){
+        Dbopen opener = new Dbopen(this);
+        SQLiteDatabase db;
+        db = opener.getWritableDatabase();
+        Switch sw1 = (Switch) findViewById(R.id.sw1);
+        //gather columns
+        String[] columns = {Dbopen.col_id, Dbopen.col_action, Dbopen.col_urgent};
+        //query results
+
+        int col1Index = results.getColumnIndex(opener.col_id);
+        int col2Index = results.getColumnIndex(opener.col_action);
+        int col3Index = results.getColumnIndex(opener.col_urgent);
+
+
+            int count = results.getCount();
+            int version = db.getVersion();
+            int numCols = columns.length;
+
+        Log.i("Version ", Integer.toString(version) );
+        Log.i("Number of columns ", Integer.toString(numCols) );
+        for (int i = 0; i< columns.length; i++){
+            Log.i("Column " + i, columns[i]);
+        }
+        Log.i("Number of results in cursor ", Integer.toString(count));
+        /*while(results.moveToNext()) {
+            String action = results.getString(col2Index);
+            String urgent = results.getString(col3Index);
+            long id = results.getLong(col1Index);
+            Log.i("Result " ,Long.toString(id) + " " + action + " "+ urgent);
+        } */
+        results.moveToFirst();
+        while(!results.isAfterLast()){
+            String action = results.getString(col2Index);
+            String urgent = results.getString(col3Index);
+            long id = results.getLong(col1Index);
+            Log.i("Result " ,Long.toString(id) + " " + action + " "+ urgent);
+            results.moveToNext();
+        }
+    }
 
 }
