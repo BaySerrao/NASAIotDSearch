@@ -1,11 +1,9 @@
 <resources>
 
-    <string name="app_name">CST2335 Lab 4</string>
-    <string name="switchText">Urgent</string>
-    <string name="input">Type Here</string>
-    <string name="buttonText">Add</string>
-    <string name="messTitle">Do you want to delete this?</string>
-    <string name="messBody">The selected row is</string>
-    <string name="messPos">Yes</string>
-    <string name="messNeg">No</string>
+    <string name="app_name">CST2335 Lab 7</string>
+
+    <string name="name">Name:</string>
+    <string name="height">Height:</string>
+    <string name="mass">Mass:</string>
+
 </resources>

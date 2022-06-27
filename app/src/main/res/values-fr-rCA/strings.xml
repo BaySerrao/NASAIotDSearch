@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">CST2335 Lab 4</string>
-    <string name="switchText">Urgent</string>
-    <string name="input">Écrivez ici</string>
-    <string name="buttonText">Ajoutez</string>
-    <string name="messTitle">Voulez-vous supprimer ceci ?</string>
-    <string name="messBody">La ligne sélectionnée est :</string>
-    <string name="messPos">Oui</string>
-    <string name="messNeg">Non</string>
+    <string name="app_name">CST2335 Lab 7</string>
+    <string name="name">Nom:</string>
+    <string name="height">Hauteur:</string>
+    <string name="mass">Masse:</string>
 </resources>

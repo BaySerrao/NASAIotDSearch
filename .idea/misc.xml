@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.14" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main2.xml" value="0.33" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_constraint.xml" value="0.30885416666666665" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_grid.xml" value="0.30885416666666665" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_linear.xml" value="0.25" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_name.xml" value="0.5" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/fragment_details.xml" value="0.67" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/list_item.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/listlayout.xml" value="0.190625" />
       </map>
