@@ -9,7 +9,8 @@
     android:layout_height="match_parent"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    android:id="@+id/lv1"></ListView>
+    android:id="@+id/lv1"
+    android:longClickable="true"></ListView>
 
     <FrameLayout
         android:layout_width="980dp"

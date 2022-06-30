@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -27,15 +29,24 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv;
     String name, height, mass;
     ArrayList<String> listo;
-
+    ArrayList<String> listo2;
+    ArrayList<String> listo3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         yoink y1 = new yoink();
         y1.execute();
-
         lv = findViewById(R.id.lv1);
+        EmptyActivity e1 = new EmptyActivity();
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            public boolean onItemLongClick(AdapterView<?> arg0, View v,
+                                           int index, long arg3) {
+                e1.doThing();
+                return true;
+            }
+        });
     }
 
 
@@ -71,7 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(String s) {
-
+            listo = new ArrayList<String>();
+            listo2 = new ArrayList<String>();
+            listo3 = new ArrayList<String>();
             try {
                 JSONObject jobect = new JSONObject(s);
                 JSONArray jarray = jobect.getJSONArray("results");
@@ -81,14 +94,15 @@ public class MainActivity extends AppCompatActivity {
                     height = j1.getString("height");
                     mass = j1.getString("mass");
                     listo.add(name);
-
+                    listo2.add(height);
+                    listo3.add(mass);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }
             ListAdapter adapter = new ArrayAdapter<String>(
                     MainActivity.this,
-                    R.layout.activity_main,
+                    R.layout.list_filler,
                     listo);
             lv.setAdapter(adapter);
             super.onPostExecute("done");
