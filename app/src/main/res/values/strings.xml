@@ -1,9 +1,10 @@
 <resources>
 
-    <string name="app_name">CST2335 Lab 7</string>
-
-    <string name="name">Name:</string>
-    <string name="height">Height:</string>
-    <string name="mass">Mass:</string>
-
+    <string name="app_name">CST2335 Lab 8</string>
+    <string name="menu1title">Menu1 Title</string>
+    <string name="menu2title">Menu2 Title</string>
+    <string name="toast1">You clicked on item 1</string>
+    <string name="toast2">You clicked on item 2</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

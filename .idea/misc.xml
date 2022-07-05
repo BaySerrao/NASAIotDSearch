@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout-sw720dp/activity_main.xml" value="0.14" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_dad_joke.xml" value="0.17956391620350576" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_empty.xml" value="0.18333333333333332" />
-        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main2.xml" value="0.33" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_constraint.xml" value="0.30885416666666665" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/activity_main_grid.xml" value="0.30885416666666665" />
@@ -15,6 +16,8 @@
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/list_filler.xml" value="0.12057291666666667" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/list_item.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/layout/listlayout.xml" value="0.190625" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/menu/mainmenny.xml" value="0.17870884993587002" />
+        <entry key="..\:/Users/nitro/Downloads/School/MobiGraphic/app/src/main/res/menu/navmenny.xml" value="0.17870884993587002" />
       </map>
     </option>
   </component>
