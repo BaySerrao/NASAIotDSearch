@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">NASA Image of the Day Search</string>
+    <string name="menu1title">Menu1 Title</string>
+    <string name="menu2title">Menu2 Title</string>
+    <string name="toast1">Help</string>
+    <string name="toast2">You clicked on item 2</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="helpmenutitle">HELP</string>
+    <string name="helpmenumessage">Welcome to the NASA Image of the Day Search. To use this, simply use the bottom box to select a date from the popup calendar, then hit search. The app will show you the date selected and the link to that date\'s Image of the Day! You can click the url to open the image and if you love it, you can add it to your favorites! For expert users, you can also type in a date by closing the calendar and typing with the keyboard!</string>
+    <string name="searchbuttonname">SEARCH</string>
+    <string name="favbuttonname">ADD TO FAVORITES</string>
+    <string name="calbuilder">Click here to pick date</string>
+    <string name="urler">Your link will populate here!</string>
+    <string name="datesel">This is the date you select!</string>
+    <string name="deleteTitle">Favorite Options</string>
+    <string name="deleteBody">What would you like to do with this Favorite?</string>
+    <string name="messpos">Delete</string>
+    <string name="messNeg">Nothing</string>
+    <string name="messNeut">See Details</string>
+    <string name="thanks">Thanks for using my app!</string>
+    <string name="ok">OK</string>
+    <string name="favoritehelpmessage">This is your favorites list! Tap and hold an entry to see more details or remove it from your favorites!</string>
+    <string name="aboutmessage">Nothing special to do here! We just wanted to thank you for using our app!</string>
+    <string name="recentmessage">This page will show you the details of one of your favorites and will launch automatically when you use the favorites menu to see more details. No actions required in this page from you!</string>
+    <string name="maintitle">NASA Image of the Day Search V 1.0</string>
+    <string name="abouttitle">About Us V1.0</string>
+    <string name="detailstitle">Recent Details V1.0</string>
+    <string name="favtitle">Favorites V1.0</string>
+</resources>

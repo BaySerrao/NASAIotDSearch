@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Recherche de l\'image du jour de la NASA</string>
+    <string name="menu1title">Menu1 Titre</string>
+    <string name="menu2title">Menu2 Titre</string>
+    <string name="toast1">Aider</string>
+    <string name="toast2">Vous avez cliqué sur l\'élément 2</string>
+    <string name="open">Ouvrir</string>
+    <string name="close">Fermer</string>
+    <string name="helpmenutitle">AIDE</string>
+    <string name="helpmenumessage">Bienvenue dans la recherche d\'images du jour de la NASA. Pour l\'utiliser, utilisez simplement la case du bas pour sélectionner une date dans le calendrier contextuel, puis appuyez sur Rechercher. L\'application vous montrera la date sélectionnée et le lien vers l\'image du jour de cette date ! Vous pouvez cliquer sur l\'url pour ouvrir l\'image et si vous l\'aimez, vous pouvez l\'ajouter à vos favoris ! Pour les utilisateurs experts, vous pouvez également saisir une date en fermant le calendrier et en tapant avec le clavier !</string>
+    <string name="searchbuttonname">CHERCHER</string>
+    <string name="favbuttonname">AJOUTEZ AUX FAVORIS</string>
+    <string name="calbuilder">Cliquez ici pour choisir la date</string>
+    <string name="urler">Votre lien s\'affichera ici!</string>
+    <string name="datesel">C\'est la date que vous sélectionnez!</string>
+    <string name="deleteTitle">Options favoris</string>
+    <string name="deleteBody">Qu\'aimeriez-vous faire avec ce favori?</string>
+    <string name="messpos">Effacer</string>
+    <string name="messNeg">Rien</string>
+    <string name="messNeut">Voir les détails</string>
+    <string name="thanks">Merci d\'utiliser mon application!</string>
+    <string name="ok">OK</string>
+    <string name="favoritehelpmessage">Ceci est votre liste de favoris! Appuyez longuement sur une entrée pour voir plus de détails ou la supprimer de vos favoris!</string>
+    <string name="aboutmessage">Rien de spécial à faire ici! Nous voulions simplement vous remercier d\'avoir utilisé notre application!</string>
+    <string name="recentmessage">Cette page vous montrera les détails de l\'un de vos favoris et se lancera automatiquement lorsque vous utiliserez le menu des favoris pour voir plus de détails. Aucune action requise dans cette page de votre part !</string>
+</resources>

@@ -1,0 +1,40 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.AndroidLabs" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="MyDatePickerStyle" parent="Theme.AndroidLabs">
+        <item name="colorAccent">#FF5722</item>
+        <!--selected Item color-->
+        <item name="colorControlActivated">#2196F3</item>
+        <!-- arrow bordercolor(<>)-->
+        <!--<item name="android:selectableItemBackgroundBorderless">@color/border</item>-->
+        <!-- Highlight item color-->
+       <!-- <item name="colorControlHighlight">#d50000</item> -->
+        <!--Calender Background color -->
+        <!--<item name="android:windowBackground">@color/dialogWindowBg</item>-->
+        <!-- Ok Cancel Color-->
+        <item name="android:textSize">10dp</item>
+        <!-- Week TextColor-->
+        <item name="android:textColorSecondary">#E91E63</item>
+        <!-- Calender Number color arrow color (< >) -->
+        <item name="android:textColorPrimary">#3F51B5</item>
+        <!--day , month-->
+        <item name="android:textColorPrimaryInverse">#0ff</item>
+        <!-- year-->
+        <item name="android:textColorSecondaryInverse">#009688</item>
+
+    </style>
+</resources>

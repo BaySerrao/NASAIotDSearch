@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav1"
+
+        android:title="Home"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/nav2"
+
+        android:title="Favorites"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        ></item>
+    <item
+        android:id="@+id/nav4"
+        android:title="Recent Details"
+        android:orderInCategory="100"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/nav5"
+        android:title="About"
+        android:orderInCategory="100"
+        app:showAsAction="always"></item>
+    <item
+        android:id="@+id/nav3"
+
+        android:title="Exit"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        ></item>
+</menu>
